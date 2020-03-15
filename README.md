@@ -1,4 +1,4 @@
-# pickbazar-site-task
+# ecommerce-website
 
 ##  Web Sayt haqqinda melumat
 Istifadeci ana sehifeye daxil olub. Mehsullarla tanis ola bilecek. Istediyi kateqoriyaya uygun mehsullari filter ede bilecek. Login olduqdan sonra mehsullari cart-a elave ede bilecek. Ve mehsullari ala bilecek. Istifadeci, idareetme sehifesinden oz mehsullarini yerlesdire bilecek. Ve bu mehsullar ana sehifede numayis olunacaq. Istifadeci, oz sifarislerine ve ozune sifaris edilen mehsullara baxa bilecek. Istifadeci yerlesdirdiyi mehsullara baxa bilecek ve hemin mehsullari redakte ede bilecek.
