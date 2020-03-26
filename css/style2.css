@@ -378,6 +378,11 @@ p, a, span, button, li, div {
     font-family: "Lato", sans-serif;
     margin: 0px;
 }
+@media screen and (min-width: 1024px){
+    .cart{
+        min-width: 28%;
+    }
+}
 @media(max-width:580px){
     .logo{
         position: fixed;
@@ -604,7 +609,7 @@ main{
     width: 320px;
 }
 .main-right{
-    width: calc(90% - 320px);
+    width: calc(105% - 320px);
     height: auto;
     min-height: 100vh;
     padding: 25px 45px 50px;
@@ -718,7 +723,7 @@ right: 15px;
 border-radius: 12px;
 }
 .product-detail{
-    padding: 20px 25px 30px;
+    padding: 20px 5px 30px;
 }
 .product-detail h3{
     padding-top: 20px;
@@ -1264,3 +1269,9 @@ color: rgb(0, 158, 127);
     border-radius: 6px;
 }
 /*  */
+.product-img img{
+    max-width: 100%;
+    min-width: 100%;
+    min-height: 100%;
+    max-height: 100%;
+}
