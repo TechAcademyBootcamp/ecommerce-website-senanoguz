@@ -179,6 +179,17 @@ $('#resetshoww').on("click",function(){
         $("nav ul").toggleClass("showing")
     })
     $(window).on("scroll",function(){
+        if($(window).scrollTop() > 1200){
+            $('.main-left-menu-in').css({
+                position:'fixed',
+                top:'100px'
+            })
+        }
+        else{
+            $('.main-left-menu-in').css({
+                position:'static'
+            })
+        }
         if($(window).scrollTop() > 200){
             $('header').css('position','fixed')
             $('header').css('background','#fff')
