@@ -17,15 +17,15 @@
             <button id="projectBtn">Add Product</button>
         </div>
         <div class="profile">
-            <img src="http://35.225.243.133/media/users/14022231_1141571352566104_2792218955672310502_n.jpg" alt="">
+            <img src="" alt="">
         </div>
     </header>
     <section>
         <div class="left">
             <div class="left_in">
+                <a href="index.html" class="normal">Home Page</a>
                 <a href="adminpanel.html" class="normal">Products</a>
                 <a href="admin_category.html" class="active">Category</a>
-                <a href="" class="normal">Orders</a>
             </div>
             <button id="logout">Logout</button>
         </div>
@@ -36,7 +36,7 @@
                         <div class="full-md-cate">
 
                             <header>
-                                <button>Add Category</button>
+                                <button id="cateAdd">Add Category</button>
                             </header>
                             <div class="bottom">
                                  <table>
@@ -109,6 +109,44 @@
                                         <label for="">Image</label>
                                         <input name="main_image" aria-invalid="false" aria-required="false" autocomplete="on"    type="file" >
                                         <small id="main_image" class="form-text text-muted"></small>
+                                    </div>
+                                    
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="sendarea">
+                    <div class="cancelbtn">Cancel</div>
+                    <button class="sendbtn">Crea Project</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="addCategory" style="display: none;">
+        <div id="adprxC">x</div>
+        <div class="middle">
+            <div class="content">
+                <h3>Add Category</h3>
+            </div>
+            <form method="POST">
+                <div class="area">
+                    <div class="area-in">
+                        <div class="row">
+                            <div class="left"><span>Add your Category information from here</span></div>
+                            <div class="right">
+                                <div class="detail">        
+                                 <small id="non_field_errors" ></small>
+                                    <div class="form-content">
+                                        <label for="">Title *</label>
+                                        <input name="title" aria-invalid="false" aria-required="false" autocomplete="on" inputmode="text"   type="text"  value="">
+                                        <small id="title" class="form-text text-muted"></small>
+                                    </div>
+                                    <div class="form-content">
+                                        <label for="">Icon Svg</label>
+                                        <textarea name="icon_svg" id="" cols="30" rows="10"></textarea>
+                                        <small id="icon_svg" class="form-text text-muted"></small>
                                     </div>
                                     
                                 </div>

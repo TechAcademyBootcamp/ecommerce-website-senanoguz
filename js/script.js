@@ -35,20 +35,34 @@ user_data = localStorage.getItem('user_data')
         })
 
     }
+    var say = 0
+    var toplam = 0
     products = []
     function myProduct(s){
+        say++
            $('.productFull').show()
            $('#newtitle').empty()  
            $('.kq').text( products[s-1].amount_by_unit + products[s-1].unit)
            $('.priceShow').text( products[s-1].price)
            $('#newtitle').append(products[s-1].title)
+           $('#productcate').text(products[s-1].category.title)
            $('.productLeft img').attr('src',products[s-1].main_image)
            $('.prDescription').text(products[s-1].description)
-        $('.priceCartX').on('click',function(){
+            $('.priceCartX').on('click',function(){
             $('.productFull').hide() 
         })
-        console.log(s)
+        $('.priceCart').on('click',function(){
+            $('.pcbtn').empty()  
+            $('.pcspan').empty()
+            toplam = parseInt(products[s-1].price) + toplam 
+            console.log(toplam)
+            $('.pcspan').text(say + ' Item')
+            $('.pcbtn').text('$ ' + toplam)
+
+        })
     }
+
+    
 $(document).ready(function(){
 
     var item = $('.pcspan')
@@ -421,7 +435,7 @@ var resultLength
                 if(result[i].discount_price){
                     discount = (result[i].discount_price / result[i].price) * 100
                     esas.append(
-                        `<div class="cart" id="${result[i].id}" onclick="myProduct(${result[i].id})">
+                        `<div class="cart" id="${result[i].id}" onclick="myProduct(${result[i].id})" onclick="sebet(${result[i].id})">
                         <div class="cart-in">
                             <div class="react-reveal">
                                 <div class="product-cart-in">
@@ -450,7 +464,7 @@ var resultLength
                     $('.productFull img').attr('src',result[i].main_image)
                     esas.append(
                         
-                        `<div class="cart" id="${result[i].id}" onclick="myProduct(${result[i].id})">
+                        `<div class="cart" id="${result[i].id}" onclick="myProduct(${result[i].id})" onclick="sebet(${result[i].id})">
                         <div class="cart-in">
                             <div class="react-reveal">
                                 <div class="product-cart-in">

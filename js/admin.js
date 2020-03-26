@@ -1,9 +1,24 @@
 const back_end_domain = 'http://35.225.243.133'
 var user_data = JSON.parse(localStorage.getItem('user_data'));
 
-
+function removeCate(id){
+    $.ajax({
+        url: `${back_end_domain}/api/categories/${id}/`,
+        method: 'DELETE',
+        headers: {
+            'Authorization': `Token ${token}`
+        },
+        success: function(result, textStatus, xhr){
+            window.location.href = 'admin_category.html'
+            },
+        error: function(errorResult){
+            console.log('error')
+        }
+        })
+    }
     if(user_data && user_data.hasOwnProperty('token')){
         var token = user_data['token'];
+        $('.profile img').attr('src',user_data.image)
         $('body').show();
     }
     else{
@@ -18,13 +33,15 @@ $(document).ready(function(){
             for(var i in result){
                 $('#choosecate').append(
                     `<option>${result[i].id}. ${result[i].title}</option>`
-                )   
+                )
+
                 esas.append(
                 ` <table>
                 <tr>
                     <td>${result[i].id}</td>
                     <td>${result[i].title}</td>
-                    <td>${result[i].icon_svg}</td>
+                    <td>${result[i].icon_svg}
+                    <button style="width:30px;height:20px" id="${result[i].id}" onclick="removeCate(${result[i].id})">X</button></td>
                 </tr>
             </table>`
                 )
@@ -156,7 +173,7 @@ $(document).ready(function(){
 
 // Send Project
 
-$('.middle form').submit(function (e){
+$('.addProduct form').submit(function (e){
     e.preventDefault();
     var form = new FormData(this);
     if($('[name="main_image"]')[0].files.length !== 0){
@@ -196,5 +213,69 @@ $('.middle form').submit(function (e){
     })
 });
 
+//category
+var slgclick = false
+$('#cateAdd').on('click',function(){
+    if(slgclick === false){
+    $('.addCategory').show()
+        $('.addCategory').show()
+        $('.addCategory').removeClass('animated fadeOutRight')
+        $('.addCategory').addClass('animated fadeInRight')
+        slgclick = true
+    }
+})
+$('.cancelbtn').on('click',function(){
+    if(slgclick === true){
+        slgclick = false
+    $('.addCategory').addClass('animated fadeOutRight')
+    }
+})
+$('#adprxC').on('click',function(){
+    if(slgclick === true){
+        slgclick = false
+    $('.addCategory').addClass('animated fadeOutRight')
+    }
+})
+
+
+$('.addCategory form').submit(function (e){
+    e.preventDefault();
+    var form = new FormData(this);
+    $.ajax({
+        url: `${back_end_domain}/api/categories/`,
+        method: 'POST',
+        data: form,
+        headers: {
+            'Authorization': `Token ${token}`
+        },
+        enctype: 'multipart/form-data',
+        cache:false,
+        processData: false,
+        contentType: false,
+        success: function(result, textStatus, xhr){
+            console.log(result)
+            if (xhr.status === 201){
+                window.location = 'admin_category.html'
+            }else{
+                alert('Sehvlik var!');
+            }
+        },
+        error: function(errorResult){
+            console.log(errorResult)
+
+            var errors = errorResult.responseJSON;
+            if (errors.hasOwnProperty('non_field_errors')){
+                $('#non_field_errors').text(errors['non_field_errors']);
+            }
+            for(var error in errors){
+                $(`input[name=${error}]`).siblings('small').text(errors[error]);
+            }
+            if (errorResult.statusText ==='error'){
+                window.location = 'login.html';
+            }
+
+        },
+    })
+});
 
 })

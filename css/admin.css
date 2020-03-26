@@ -320,6 +320,44 @@ max-width: 25%;
     top: 20px;
     font-size: 25px;
 }
+#adprxC:hover{
+    color: rgb(0, 197, 141);
+    background-color: #fff;
+}
+#adprxC{
+    cursor: pointer;
+    background: #fff;
+    color: rgb(255, 255, 255);
+    background-color: rgb(252, 92, 99);
+    padding: 10px;
+    border-radius: 50%;
+    width: 35px;
+    min-height: 60px;
+    position: absolute;
+    border: 1px solid black;
+    left: -40px;
+    top: 20px;
+    font-size: 25px;
+}
+.addCategory{
+    transform: translateX(0px);
+    transition-property: opacity, transform;
+    width: 85vw;
+    position: fixed;
+    opacity: 1;
+    top: 0px;
+    right: 0px;
+    max-height: 100%;
+    background-color: rgb(247, 247, 247);
+    height: 100%;
+    max-width: 100%;
+    border-bottom-right-radius: 0px;
+    border-top-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border-top-left-radius: 0px;
+    transition-timing-function: cubic-bezier(0.2, 0.8, 0.4, 1);
+    display: flex;
+}
 .addProduct{
     transform: translateX(0px);
     transition-property: opacity, transform;
