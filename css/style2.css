@@ -1122,7 +1122,7 @@ box-sizing: border-box;
 }
 
 .productFull{
-    max-height: 516px;
+    max-height: 100%;
     width: 50%;
     height: auto;
     position: fixed;
@@ -1134,34 +1134,58 @@ box-sizing: border-box;
     overflow: auto;
     border-radius: 6px;
     border: 0px none;
-    width: 100%;
-    height: 100%;
     display: flex;
     border: solid 1px #ddd;
     background: #f0f0f0;
+    background-color: rgb(240, 240, 240);
     padding: 30px;
     overflow: hidden;
     box-sizing: border-box;
     z-index: 99999;
-    right: 50%;
-    width: 50%;
+    background-color: rgba(9, 9, 12, 0.3);
+    display: show;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    z-index: 9999;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(9, 9, 12, 0.3);
+}
+.kq{
+    margin-top: 20px;
+}
+.productArea{
+    min-width: 41%;
+    height: 60%;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    max-width: 50%;
 }
 .productLeft{
     flex: 0 0 50%;
-max-width: 50%;
-padding: 30px 60px;
-display: flex;
--moz-box-align: center;
-align-items: center;
--moz-box-pack: center;
-justify-content: center;
-position: relative;
+    max-width: 30%;
+    padding: 30px 60px;
+    display: flex;
+    -moz-box-align: center;
+    align-items: center;
+    -moz-box-pack: center;
+    justify-content: center;
+    position: relative;
 }
 .productLeft img{
-    min-width: auto;
-height: auto;
-position: relative;
-margin: auto;
+    min-width: 100%;
+    height: auto;
+    position: relative;
+    margin: auto;
+    max-height: 150%;
+    max-width: 150%;
+    min-height: auto;
 }
 .productRight{
     padding: 50px;
@@ -1171,9 +1195,12 @@ width: 100%;
 height: auto;
 min-height: 0px;
 max-height: 90vh;
-    flex: 0 0 50%;
-max-width: 50%;
+flex: 0 0 50%;
 border-left: 1px solid rgb(243, 243, 243);
+padding: 8%;
+max-width: 35%;
+min-width: 20%;
+
 }
 .productRight h1{
     font-family: "Poppins", sans-serif;
@@ -1213,32 +1240,27 @@ color: rgb(0, 158, 127);
 
 }
 .priceCartX{
-    margin-top: 30px;
-    font-family: "Lato", sans-serif;
-    font-size: 15px;
-    font-weight: 700;
-    height: 36px;
-    border-radius: 4rem;
-    box-sizing: border-box;
     cursor: pointer;
     display: inline-flex;
-    -moz-box-align: center;
-    align-items: center;
-    -moz-box-pack: center;
-    justify-content: center;
-    width: auto;
-    font-family: "Lato", sans-serif;
-    font-weight: 700;
+    -moz-box-align: center;  
+    align-items: center;  
+    -moz-box-pack: center;  
+    justify-content: center;  
+    width: auto;  
+    font-family: "Lato", sans-serif; 
+    font-weight: 700; 
     text-decoration: none;
-    padding: 0px 15px;
-    border: 1px solid rgb(0, 158, 127);
+    padding: 0px 15px; 
     box-sizing: border-box;
-    color: rgb(0, 158, 127);
+    color:rgba(0, 0, 0, 0.5);
     background-color: transparent;
     transition: all 0.35s ease 0s;
     height: 38px;
     font-size: 14px;
-    border-radius: 50%;
+    position: relative;
+    top: 0px;
+    background: transparent none repeat scroll 0% 0%;
+    left: 95%;
 }
 .priceCart{
     margin-top: 30px;

@@ -1,5 +1,6 @@
 
 const back_end_domain = 'http://35.225.243.133'
+
 user_data = localStorage.getItem('user_data')
     user_data = JSON.parse(user_data)
     if(user_data){
@@ -34,9 +35,22 @@ user_data = localStorage.getItem('user_data')
         })
 
     }
-
-    
+    products = []
+    function myProduct(s){
+           $('.productFull').show()
+           $('#newtitle').empty()  
+           $('.kq').text( products[s-1].amount_by_unit + products[s-1].unit)
+           $('.priceShow').text( products[s-1].price)
+           $('#newtitle').append(products[s-1].title)
+           $('.productLeft img').attr('src',products[s-1].main_image)
+           $('.prDescription').text(products[s-1].description)
+        $('.priceCartX').on('click',function(){
+            $('.productFull').hide() 
+        })
+        console.log(s)
+    }
 $(document).ready(function(){
+
     var item = $('.pcspan')
     var total = $('.pcbtn')
     var qiymet = 0
@@ -401,12 +415,13 @@ var resultLength
             var esas = $('.main-right-content')
 
             for(var i in result){
+                products.push(result[i]);
 
                 resultLength = result.length
                 if(result[i].discount_price){
                     discount = (result[i].discount_price / result[i].price) * 100
                     esas.append(
-                        `<div class="cart" id="${result[i].id}">
+                        `<div class="cart" id="${result[i].id}" onclick="myProduct(${result[i].id})">
                         <div class="cart-in">
                             <div class="react-reveal">
                                 <div class="product-cart-in">
@@ -427,18 +442,6 @@ var resultLength
                             </div>
                         </div>
                     </div>
-                    <script>
-
-                    $('#${result[i].id}').on('click',function(){
-                       $('.productFull').show()
-                       $('#newtitle').empty()
-                       $('.priceShow').text(${result[i].price})
-                       $('#newtitle').append(${result[i].price})
-                    })
-                    $('.priceCartX').on('click',function(){
-                        $('.productFull').hide() 
-                    })
-                    </script>
                     `
                     )
                     
@@ -446,7 +449,8 @@ var resultLength
                 else{
                     $('.productFull img').attr('src',result[i].main_image)
                     esas.append(
-                        `<div class="cart" id="${result[i].id}">
+                        
+                        `<div class="cart" id="${result[i].id}" onclick="myProduct(${result[i].id})">
                         <div class="cart-in">
                             <div class="react-reveal">
                                 <div class="product-cart-in">
@@ -467,19 +471,6 @@ var resultLength
                             </div>
                         </div>
                     </div>
-
-                    <script>
-
-                    $('#${result[i].id}').on('click',function(){
-                       $('.productFull').show()
-                       $('#newtitle').empty()
-                       $('.priceShow').text(${result[i].price})
-                       $('#newtitle').append(${result[i].price})
-                    })
-                    $('.priceCartX').on('click',function(){
-                        $('.productFull').hide() 
-                    })
-                    </script>
                     `
                     )
                 }
@@ -510,7 +501,9 @@ var resultLength
         alert()
     })
 
-
-
+console.log(products)
+    function myProduct(s,f){
+        console.log(s,f)
+    }
 
 })
