@@ -48,14 +48,20 @@ $(document).ready(function(){
                 )
                 wrapper.append(sticky)
                 esas.append(wrapper)
-            console.log(errorResult)
         },
     })
 
 
     $.ajax({
-        url: `${back_end_domain}/api/products/`,
+        url: `${back_end_domain}/api/own-products/`,
         method: 'GET',
+        headers: {
+            'Authorization': `Token ${token}`
+        },
+        enctype: 'multipart/form-data',
+        cache:false,
+        processData: false,
+        contentType: false,
         success: function(result, textStatus, xhr){
             var esas = $('.full-md')
             for(var i in result){
@@ -117,7 +123,6 @@ $(document).ready(function(){
                 )
                 wrapper.append(sticky)
                 esas.append(wrapper)
-            console.log(errorResult)
         },
     })
     $('#logout').on("click",function(){
@@ -169,7 +174,6 @@ $('.middle form').submit(function (e){
         processData: false,
         contentType: false,
         success: function(result, textStatus, xhr){
-            console.log(result);
             if (xhr.status === 201){
                 window.location = 'adminpanel.html'
             }else{
@@ -187,8 +191,7 @@ $('.middle form').submit(function (e){
             if (errorResult.statusText ==='error'){
                 window.location = 'login.html';
             }
-            console.log(errorResult);
-            console.log(errors);
+
         },
     })
 });
