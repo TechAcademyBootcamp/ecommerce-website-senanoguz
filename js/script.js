@@ -426,7 +426,20 @@ var resultLength
                                 </div>
                             </div>
                         </div>
-                    </div>`
+                    </div>
+                    <script>
+
+                    $('#${result[i].id}').on('click',function(){
+                       $('.productFull').show()
+                       $('#newtitle').empty()
+                       $('.priceShow').text(${result[i].price})
+                       $('#newtitle').append(${result[i].price})
+                    })
+                    $('.priceCartX').on('click',function(){
+                        $('.productFull').hide() 
+                    })
+                    </script>
+                    `
                     )
                     
                 }
