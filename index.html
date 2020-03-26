@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/style2.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+    <link rel="stylesheet" type="text/css" href="./slick/slick.css">
+    <link rel="stylesheet" type="text/css" href="./slick/slick-theme.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+        <div id="mypopup" >
+            <div class="mypopupin">
+                <div class="mypopupinhead">
+                    <div class="innerRndComponent">
+                        <div class="mypopcontent">
+                            <div id="mypopx" onclick="toggle()" >x</div>
+                            <div class="myPopLogin">
+                                <h3>Welcome Back</h3>
+                                <span>Login with your email & password</span>
+                                <form action="POST">
+                                <div class="form-group">
+                                    <input type="text" name="username" aria-describedby="usernameHelp" placeholder="username" required="" class="mypopinput" value="">
+                                    <small id="usernameHelp"></small>
+                                </div>
+                                <div class="form-group">
+                                    <input type="password" name="password" aria-describedby="passwordHelp" placeholder="password" required="" class="mypopinput" value="">
+                                    <p id="passwordHelp" ></p>
+                                </div>
+                                <p id="loginAlert" ></p>
+                                    <button type="submit">Continue</button>
+                                </form>
+                                <p style="padding: 20px 0px;" class="signup">Don't have any account? <a href="#" id="signupshow">Sign Up</a></p>
+                                <div class="SignInReset">
+                                    <p>Forgot your password? <button id="resetshow"> Reset It</button></p>
+                                    
+                                </div>   
+                            </div>
+
+                            <div class="mypopcontentRegister">
+                            <div class="myPopRegister" style="display: none;">
+                                <h3>Sign Up</h3>
+                                <span>By signing up, you agree to Pickbazar's</span>
+                                <form action="POST">
+                                    <div class="forum-group">
+                                    <input type="text" placeholder="username" required="" aria-describedby="usernameHelp"  name="username" class="mypopinput" value="">
+                                    <small id="usernameHelp" class="form-text text-muted"></small>
+                                    </div>
+                                    <div class="forum-group">
+                                    <input type="email" placeholder="demo@demo.com"  name="email" required="" aria-describedby="emailHelp" class="mypopinput" value="">
+                                    <small id="emailHelp" class="form-text text-muted"></small>
+                                     </div>
+                                    <div class="forum-group">
+                                    <input type="password" placeholder="password" name="password" required="" aria-describedby="passwordHelp" class="mypopinput" value="">
+                                    <small id="passwordHelp" class="form-text text-muted"></small>
+                                    </div>
+                                    <div class="forum-group">
+                                    <input type="text" placeholder="First Name" required=""  name="first_name" aria-describedby="firstNameHelp" class="mypopinput" value="">
+                                    <small id="firstNameHelp" class="form-text text-muted"></small>
+                                    </div>
+                                    <div class="forum-group">
+                                    <input type="text" placeholder="Last Name" required=""  name="last_name"  aria-describedby="lastNameHelp" class="mypopinput" value="">
+                                    <small id="lastNameHelp" class="form-text text-muted"></small>
+                                    </div>
+                                    <div class="forum-group"> 
+                                    </div>
+                                    <div class="forum-group">
+                                    <strong>Image</strong>
+                                    <input type="file" name="image" required=""  name="image" class="mypopinput"  aria-describedby="imageHelp">
+
+                                    <small id="imageHelp" class="form-text text-muted"></small>
+                                    </div>
+                                    <button type="submit">Register</button>
+                                </form>
+                                <p style="padding: 20px 0px;" class="signup">Already have an account? <a href="#" id="loginshow">Login</a></p>
+
+                            </div>
+
+                            </div>
+                            <div class="mypopcontentReset">
+                                <div class="myPopReset" style="display: none;">
+                                    <h3>Forgot Password</h3>
+                                    <span>We'll send you a link to reset your password</span>
+                                    <form action="">
+                                        <input type="email" placeholder="demo@demo.com" required="" class="mypopinput" value="">
+                                        <button type="submit">Reset Password</button>
+                                    </form>
+                                    
+                                </div>
+                                <div class="SignInOut" style="display: none;">
+                                    <p >Back to <button id="loginshoww"> Login</button></p>
+                                    
+                                </div>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mypopupin" style="display: none;">
+                <div class="mypopupinhead">
+                    <div class="innerRndComponent">
+                        <div class="mypopcontent">
+                            <button id="mypopx" onclick="toggle()" style="background: rgba(0, 0, 0, 0);color: rgb(0, 158, 127);border-radius: 50%;width: 46px;min-height: 40px;position: absolute;right: 0;top: 4px;font-size: 25px;">x</button>
+                            <div class="mypopcontentin">
+                                <h3>Welcome Back</h3>
+                                <span>Login with your email & password</span>
+                                <form action="">
+                                    <input type="email" placeholder="demo@demo.com" required="" class="mypopinput" value="">
+                                    <input type="password" placeholder="demo" required="" class="mypopinput" value="">
+                                    <button type="submit">Continue</button>
+                                </form>
+                                <p style="padding: 20px 0px;" class="signup">Don't have any account? <a href="">Sign Up</a></p>
+                                
+                            </div>
+                            <div class="SignInOut">
+                                <p>Forgot your password? <button>Reset It</button></p>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <header>
+         
+                <div class="header_left">
+                    <div class="menu-icon">
+                        <i class="fa fa-bars fa-2x"></i>
+                    </div>
+                    <div class="logo">
+                        <a href="/"><img src="img/logo.svg" alt=""></a>
+                    </div>
+                    <div class="links" id="linksbtn">
+                        <button id="linksbtn">
+                            <div class="ichdl" id="linksbtn">
+                                <i class="fa fa-shopping-cart bag" width="18px" height="18px"></i>
+                            </div>
+                            <span id="linksbtn"> 
+                                Grocery </span>
+                                <i class="fa fa-caret-down down"></i>
+                        </button>
+                    </div>
+                    <div class="popover-content" style="display:none">
+                        <div class="inner-wrap">
+                            <div class="menu-item">
+                                <i class="fa fa-shopping-cart bag" width="18px" height="18px" ></i>
+                                <span><a href="/">Grocery</a></span>
+                            </div>
+                            <div class="menu-item label">
+                                <i class="fa fa-shopping-bag bag" width="18px" height="18px" ></i>
+
+                                <span><a href="/">Makeup</a></span>
+                            </div>
+                            <div class="menu-item label">
+                                <i class="fa fa-shopping-bag bag" width="18px" height="18px" ></i>
+
+                                <span><a href="/">Bags</a></span>
+                            </div>
+                            <div class="menu-item label">
+                                <i class="fa fa-female bag" width="18px" height="18px" ></i>
+
+                                <span><a href="/">Clothing</a></span>
+                            </div>
+                            <div class="menu-item label">
+                                <i class="fas fa-chair bag" width="18px" height="18px" ></i>
+                                <span><a href="/">Furniture</a></span>
+                            </div>
+                            <div class="menu-item label">
+                                <i class="fa fa-shopping-bag bag" width="18px" height="18px" ></i>
+
+                                <span><a href="/">Book</a></span>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="header_right">
+
+                    <div class="menu-right">
+                        <a  href="/offer"><span class="label">Offer</span>
+                        </a>
+                    </div>
+                    <div class="menu-right">
+                        
+                        <a  href="/offer"><span class="label"><i class="fa fa-question-circle"></i> Need Help</span>
+                        </a>
+                    </div>
+                    <button class="launguage">
+                        <span><img src="img/flags/us.png" width="30px" height="20px" alt=""> English</span>
+                    </button>
+                    <div class="lgpopover-content" >
+                        <div class="inner-wrap">
+                            <div class="lgmenu-item lglabel" >
+                                <img src="img/flags/az.png" width="30px" height="20px" alt="">
+                                <span><a href="/">Azerbaijan</a></span>
+                            </div>
+                            <div class="lgmenu-item">
+                                <img src="img/flags/us.png" width="30px" height="20px" alt="">
+                                <span><a href="/">English</a></span>
+                            </div>
+                            <div class="lgmenu-item lglabel">
+                                <img src="img/flags/ru.png" width="30px" height="20px" alt="">
+
+                                <span><a href="/">Russian</a></span>
+                            </div>
+                            <div class="lgmenu-item lglabel">
+                                <img src="img/flags/tr.png" width="30px" height="20px" alt="">
+
+                                <span><a href="/">Turkey</a></span>
+                            </div>
+                        </div>
+                        </div>
+                    <div class="user" id="user" >
+                            <img src="" id="profile_picture" alt="">
+                    </div>
+                    <div class="popover-content_profile" style="display: none;">
+                        <div class="inner-wrap">
+                            <div class="menu-item">
+                                <span><a href="/adminpanel.html">Admin Panel</a></span>
+                            </div>
+                            <div class="menu-item label">
+                                <span><a href="/">Profile</a></span>
+                            </div>
+                            <div class="menu-item label">
+                                <span><a href="/">Checkout</a></span>
+                            </div>
+                            <div class="menu-item label">
+                                <span><a href="/">Order</a></span>
+                            </div>
+                            <div class="menu-item label">
+                                <span><a href="/">Order Invoice</a></span>
+                            </div>
+                            <div class="menu-item label">
+                                <span><a href="/" id="logout">Logout</a></span>
+                            </div>
+                        </div>
+                        </div>
+                    <button class="join" id="join" onclick="toggle()">
+                        <span>Join</span>
+                    </button>
+                </div>
+      
+        </header>
+    <div class="middle">
+        <div class="content">
+            <h1 id="middletextH1">
+                Groceries Delivered in 90 Minute
+            </h1>
+            <span id="middletextSp">
+                Get your healthy foods & snacks delivered at your doorsteps all day everyday
+            </span>
+            <div class="search">
+                <div class="searcharea">
+                    <span class="cate">
+                        Grocery
+                    </span>
+                    <div class="searchbtn">
+                        <form action="">
+                            <input type="text" placeholder="Search your products from here">
+                            <button class="searchbtn-">
+                                <i class="fa fas fa-search fsearch"></i><span class="buttonText">Search</span>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<div class="productFull" style="display: none;">
+    <div class="priceCartX">X</div>
+    <div class="productLeft">
+        <img src="" alt="">
+    </div>
+    <div class="productRiht">
+        <h1 id=newtitle>Title</h1>
+        <div class="kq">kq</div>
+        <p class="prDescription">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Earum adipisci placeat similique aperiam 
+        </p>
+        <div class="pricecart">
+            <div class="priceShow">10$</div>
+            <div class="priceCart">
+                Cart
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 
+       var cart = $('<div>')
+    var cartin = $('<div>')
+    var reactreveal = $('<div>')
+    var productcartin = $('<div>')
+    var productimg = $('<div>')
+    var img = $('<img>')
+    var span = $('<span>')
+    var productdetail = $('<div>')
+    var h3 = $('<h3>')
+    var span2 = $('<span>')
+    var productmeta = $('<div>')
+var discountedPrice = $('<p>')
+var productprice = $('<p>')
+var qiymet
+var button = $('<button>')
+
+    $.ajax({
+        url: `${back_end_domain}/api/products/`,
+        method: 'GET',
+        // enctype: 'multipart/form-data',
+        // cache:false,
+        // processData: false,
+        // contentType: false,
+        success: function(result, textStatus, xhr){
+            for(var i in result){
+                    discount = (result[i].discount_price / result[i].price) * 100
+                    cartin.addClass('cart-in')
+                    reactreveal.addClass('react-reveal') 
+                    productcartin.addClass('product-cart-in') 
+                    img.attr('src',result[i].main_image)
+                    span.addClass('discount')
+                    span.text(discount.toFixed(2) + '%')
+                    productimg.addClass('product-img') 
+                    productcartin.append(productimg)
+                    productcartin.append(productcartin)
+                    reactreveal.append(productcartin)
+                    cartin.append(reactreveal)
+                    productimg.append(img)
+                    productimg.append(span)
+                    productdetail.addClass('product-detail')
+                    h3.text(result[i].title)
+                    span2.text(`${result[i].amount_by_unit} ${result[i].unit}`)
+                    productdetail.append(h3)
+                    productdetail.append(span2)
+                    productmeta.addClass('product-meta')
+                    discountedPrice.addClass('discountedPrice')
+                    discountedPrice.text(result[i].discount_price)
+                    productprice.addClass('product-price')
+                    productprice.text(result[i].price)
+                    qiymet = result[i].price
+                    button.text('cart')
+                    productmeta.append(discountedPrice)
+                    productmeta.append(productprice)
+                    productmeta.append(button)
+                    productdetail.append(productmeta)
+                    productcartin.append(productimg)
+                    productcartin.append(productdetail)
+                        esas.append(cart)      
+                button.on('click',function(){
+                    alert(qiymet)
+                })
+                
+            }   
+
+        },
+        error: function(errorResult){
+            var esas = $('.sticky-outer-wrapper')
+            var wrapper = $('.sticky-inner-wrapper')
+            var sticky = $('.sticky-inner-wrapper_in')
+                esas.append(
+                    `<div class="sticky-inner-wrapper">
+                    <div class="sticky-inner-wrapper_in">
+                        <div class="sticky-inner-wrapper_in_in">
+                            <span>No Category</span>
+                        </div>
+                        
+                    </div>
+                    
+                </div>`
+                )
+                wrapper.append(sticky)
+                esas.append(wrapper)
+            console.log(errorResult)
+        },
+    })
+    </div>` -->
+
+
+    
+    <section class="regular slider">
+        <div>
+          <img src="img/sl1.png" style="width: 571px;height: 265,817px;">
+        </div>
+        <div>
+            <img src="img/sl2.png" style="width: 571px;height: 265,817px;">
+
+        </div>
+        <div>
+            <img src="img/sl3.png" style="width: 571px;height: 265,817px;">
+        </div>
+        <div>
+            <img src="img/sl1.png" style="width: 571px;height: 265,817px;">
+          </div>
+          <div>
+              <img src="img/sl2.png" style="width: 571px;height: 265,817px;">
+  
+          </div>
+          <div>
+              <img src="img/sl3.png" style="width: 571px;height: 265,817px;">
+          </div>
+      </section>
+    <main>
+        <div class="main-left">
+            <div class="main-left-menu">
+                <div class="main-left-menu-in">
+                    <div class="sticky-outer-wrapper">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="main-right">
+                <div class="main-right-content">
+
+                    
+                </div>
+        </div>
+    </main>
+    <button class="product-cart">
+        <span class="pcspan">
+            0 item
+        </span>
+        <span class="pcbtn">$ 0.00</span>
+    </button>
+    <footer></footer>
+
+    
+<script>
+    function toggle(){
+    var blur = document.querySelector('body');
+    blur.classList.toggle('active')
+    blur.style.background = 'rgb(247, 247, 247)'
+    var popup = document.getElementById('mypopup');
+    popup.classList.toggle('active')
+}
+</script>
+      <script src="./slick/slick.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

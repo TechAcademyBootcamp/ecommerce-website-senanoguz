@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/admin.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+</head>
+<body style="display: none;">
+    <header>
+        <div class="logo">
+            <a href="/"><img src="img/admin.png" alt=""></a>
+        </div>
+        <div class="right_panel">
+            <button id="projectBtn">Add Product</button>
+        </div>
+        <div class="profile">
+            <img src="http://35.225.243.133/media/users/14022231_1141571352566104_2792218955672310502_n.jpg" alt="">
+        </div>
+    </header>
+    <section>
+        <div class="left">
+            <div class="left_in">
+                <a href="index.html" class="normal">Home Page</a>
+                <a href="adminpanel.html" class="active">Products</a>
+                <a href="admin_category.html" class="normal">Category</a>
+                <a href="" class="normal">Orders</a>
+            </div>
+            <button id="logout">Logout</button>
+        </div>
+        <div class="right">
+            <div class="right_in">
+                <div class="container">
+                    <div class="row">
+                        <div class="full-md">
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="addProduct" style="display: none;">
+        <div id="adprx">x</div>
+        <div class="middle">
+            <div class="content">
+                <h3>Add Product</h3>
+            </div>
+            <form method="POST">
+                <div class="area">
+                    <div class="area-in">
+                        <div class="row">
+                            <div class="left"><span>Add your Product description and necessary information from here</span></div>
+                            <div class="right">
+                                <div class="detail">        
+                                 <small id="non_field_errors" ></small>
+                                    <div class="form-content">
+                                        <label for="">Name</label>
+                                        <input name="title" aria-invalid="false" aria-required="false" autocomplete="on" inputmode="text"   type="text"  value="">
+                                        <small id="title" class="form-text text-muted"></small>
+                                    </div>
+                                    <div class="form-content">
+                                        <label for="">Description</label>
+                                        <textarea name="description" id="" cols="30" rows="10"></textarea>
+                                        <small id="description" class="form-text text-muted"></small>
+                                    </div>
+                                    <div class="form-content">
+
+                                        <label for="">Category's</label>
+                                        <select  id="choosecate">
+                                        </select>
+                                        <input name="category" placeholder="Category ID"  aria-invalid="false" aria-required="false" autocomplete="on" inputmode="text"   type="text" >
+
+                                    </div>
+                                    <div class="form-content">
+                                        <label for="">Price</label>
+                                        <input name="price"  aria-invalid="false" aria-required="false" autocomplete="on" inputmode="text"   type="text"  value="">
+                                        <small id="price" class="form-text text-muted"></small>
+                                    </div>
+                                    <div class="form-content">
+                                        <label for="">Discount Price</label>
+                                        <input  name="discount_price" aria-invalid="false" aria-required="false" autocomplete="on" inputmode="text"   type="text"  value="">
+                                        <small id="discount_price" class="form-text text-muted"></small>
+                                    </div>
+                                    <div class="form-content">
+                                        <label for="">Amount by unit</label>
+                                        <input name="amount_by_unit"  aria-invalid="false" aria-required="false" autocomplete="on" inputmode="text"   type="text" >
+                                        <small id="amount_by_unit" class="form-text text-muted"></small>
+                                    </div>
+                                    <div class="form-content">
+                                        <label for="">Unit</label>
+                                        <input name="unit" aria-invalid="false" aria-required="false" autocomplete="on" inputmode="text"   type="text"  >
+                                        <small id="unit" class="form-text text-muted"></small>
+                                    </div>
+                                    <div class="form-content">
+                                        <label for="">Image</label>
+                                        <input name="main_image" aria-invalid="false" aria-required="false" autocomplete="on"    type="file" >
+                                        <small id="main_image" class="form-text text-muted"></small>
+                                    </div>
+                                    
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="sendarea">
+                    <div class="cancelbtn">Cancel</div>
+                    <button class="sendbtn">Crea Project</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="/js/admin.js"></script>
+</body>
+</html>
