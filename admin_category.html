@@ -59,40 +59,56 @@
             <div class="content">
                 <h3>Add Product</h3>
             </div>
-            <form action="">
+            <form method="POST">
                 <div class="area">
                     <div class="area-in">
                         <div class="row">
                             <div class="left"><span>Add your Product description and necessary information from here</span></div>
                             <div class="right">
-                                <div class="detail">
+                                <div class="detail">        
+                                 <small id="non_field_errors" ></small>
                                     <div class="form-content">
                                         <label for="">Name</label>
-                                        <input aria-invalid="false" aria-required="false" autocomplete="on" inputmode="text" name="name"  type="text"  value="">
+                                        <input name="title" aria-invalid="false" aria-required="false" autocomplete="on" inputmode="text"   type="text"  value="">
+                                        <small id="title" class="form-text text-muted"></small>
                                     </div>
                                     <div class="form-content">
                                         <label for="">Description</label>
-                                        <input aria-invalid="false" aria-required="false" autocomplete="on" inputmode="text" name="name"  type="text"  value="">
+                                        <textarea name="description" id="" cols="30" rows="10"></textarea>
+                                        <small id="description" class="form-text text-muted"></small>
+                                    </div>
+                                    <div class="form-content">
+
+                                        <label for="">Category's</label>
+                                        <select  id="choosecate">
+                                        </select>
+                                        <input name="category" placeholder="Category ID"  aria-invalid="false" aria-required="false" autocomplete="on" inputmode="text"   type="text" >
+
                                     </div>
                                     <div class="form-content">
                                         <label for="">Price</label>
-                                        <input aria-invalid="false" aria-required="false" autocomplete="on" inputmode="text" name="name"  type="text"  value="">
+                                        <input name="price"  aria-invalid="false" aria-required="false" autocomplete="on" inputmode="text"   type="text"  value="">
+                                        <small id="price" class="form-text text-muted"></small>
                                     </div>
                                     <div class="form-content">
                                         <label for="">Discount Price</label>
-                                        <input aria-invalid="false" aria-required="false" autocomplete="on" inputmode="text" name="name"  type="text"  value="">
+                                        <input  name="discount_price" aria-invalid="false" aria-required="false" autocomplete="on" inputmode="text"   type="text"  value="">
+                                        <small id="discount_price" class="form-text text-muted"></small>
                                     </div>
                                     <div class="form-content">
                                         <label for="">Amount by unit</label>
-                                        <input aria-invalid="false" aria-required="false" autocomplete="on" inputmode="text" name="name"  type="text"  value="">
+                                        <input name="amount_by_unit"  aria-invalid="false" aria-required="false" autocomplete="on" inputmode="text"   type="text" >
+                                        <small id="amount_by_unit" class="form-text text-muted"></small>
                                     </div>
                                     <div class="form-content">
                                         <label for="">Unit</label>
-                                        <input aria-invalid="false" aria-required="false" autocomplete="on" inputmode="text" name="name"  type="text"  value="">
+                                        <input name="unit" aria-invalid="false" aria-required="false" autocomplete="on" inputmode="text"   type="text"  >
+                                        <small id="unit" class="form-text text-muted"></small>
                                     </div>
                                     <div class="form-content">
                                         <label for="">Image</label>
-                                        <input aria-invalid="false" aria-required="false" autocomplete="on" inputmode="text" name="name"  type="file"  value="">
+                                        <input name="main_image" aria-invalid="false" aria-required="false" autocomplete="on"    type="file" >
+                                        <small id="main_image" class="form-text text-muted"></small>
                                     </div>
                                     
                                 </div>
